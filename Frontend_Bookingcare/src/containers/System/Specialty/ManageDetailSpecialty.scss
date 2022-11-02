@@ -1,0 +1,11 @@
+.header-manage {
+  .find-option {
+    display: flex;
+    justify-content: center;
+    .find-clinic,
+    .find-specialty {
+        padding: 5px;
+        width: 270px;
+    }
+  }
+}

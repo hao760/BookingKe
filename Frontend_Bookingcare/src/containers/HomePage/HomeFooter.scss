@@ -1,0 +1,39 @@
+.footer-container {
+  background: #efefef;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .company-info {
+    width: 30%;
+    .lg {
+      background: url("../../assets/logo.svg") center no-repeat;
+      width: 200px;
+      height: 80px;
+    }
+    .address {
+      i {
+        padding-right: 10px;
+        font-size: 15px;
+      }
+    }
+  }
+  .company-headquarters {
+    width: 30%;
+    span {
+      display: block;
+      margin-bottom: 20px;
+      .name {
+        font-weight: 600;
+        margin: 0;
+      }
+    }
+  }
+}
+
+.author {
+  background: #64b9e5;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}

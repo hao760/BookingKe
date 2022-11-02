@@ -1,0 +1,20 @@
+.wrapper {
+  max-width: 1300px;
+  margin: 80px auto;
+  box-shadow: 5px 25px 35px #3535356b;
+  textarea {
+    width: 100%;
+    height: 80px;
+    border-radius: 3px;
+    border-color: hsl(0, 0%, 70%);
+  }
+  input.form-control.mb-4 {
+    height: 80px;
+  }
+  .col-4.form-group {
+    padding-bottom: 20px;
+  }
+  label.detail {
+    padding-top: 15px;
+  }
+}

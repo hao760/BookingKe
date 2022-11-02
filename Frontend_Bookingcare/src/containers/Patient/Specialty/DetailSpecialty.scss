@@ -1,0 +1,64 @@
+.detail-specialy {
+  height: 300px;
+  overflow: hidden;
+  background-color: #fff;
+  h3,
+  h2 {
+    font-size: 17px;
+    font-weight: 400;
+  }
+  h1 {
+    font-size: 20px;
+    font-weight: 600;
+  }
+}
+.for-more {
+  height: 30px;
+  display: flex;
+  align-items: center;
+  span {
+    color: #288ad6;
+    cursor: pointer;
+  }
+}
+.body-container {
+  background-color: #f9f9f9;
+  .detail-specialy-container {
+    .section {
+      background-color: #fff;
+      box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+        rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+      display: flex;
+      height: fit-content;
+      border-radius: 8px;
+      margin: 10px 0;
+      .info-doctor,
+      .schedule-doctor {
+        width: 50%;
+        height: 100%;
+      }
+      .schedule-doctor {
+        padding: 15px;
+        .btn.btn-warning {
+          background-color: #eee;
+          color: black;
+          outline: none;
+        }
+        .doctor-extra-info-contrainer {
+          border: none;
+          padding: 0;
+        }
+      }
+      .intro-doctor {
+        padding: 25px;
+        .left {
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center;
+          width: 80px;
+          height: 80px;
+        }
+      }
+    }
+  }
+}

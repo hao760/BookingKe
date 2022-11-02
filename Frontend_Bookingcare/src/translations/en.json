@@ -1,0 +1,211 @@
+{
+  "home-header": {
+    "specialty": "Medical specialty",
+    "search-doctor": "Find a doctor by specialty",
+    "health-facility": "Health facilities",
+    "select-room": "Choose a medical facility",
+    "doctor": "Doctor",
+    "select-doctor": "Select good doctor",
+    "fee": "Health check package",
+    "check-health": "General health check package",
+    "support": "Support",
+    "welcome": "Welcome ",
+    "sub-specialty": "Specialty",
+    "sub-packet": "General examination package",
+    "sub-clinic": "Hospitals, clinics",
+    "sub-doctor": "Doctors"
+  },
+  "banner": {
+    "main-title": "MEDICAL PLATFORM",
+    "sub-title": "COMPREHENSIVE HEALTH CARE",
+    "optinal-1": "Specialist medical examination",
+    "optinal-2": "Remote examination",
+    "optinal-3": "General examination",
+    "optinal-4": "Medical test",
+    "optinal-5": "Mental health",
+    "optinal-6": "Dental examination",
+    "optinal-7": "Surgery package",
+    "optinal-8": "Medical products"
+  },
+  "menu": {
+    "admin": {
+      "manage-user": "User",
+      "manage-doctor": "Manage doctor",
+      "manage-admin": "Manage admin",
+      "crud-redux": "Manage users",
+      "clinic": "Clinics",
+      "manage-clinic": "Manage clinics",
+      "specialty": "Specialties",
+      "manage-specialty": "Manage specialties",
+      "handbook": "Handbook",
+      "manage-handbook": "Manage handbook",
+      "manage-detail-clinic": "Manage detail clinic",
+      "manage-detail-specialty": "Manage detail specialty",
+      "manage-detail-handbook": "Manage detail handbook"
+    },
+    "doctor": {
+      "manage-schedule": "Manage doctor's shedule",
+      "manage-patient": "Manage patient's shedule"
+    }
+  },
+  "manage-user": {
+    "title": "Add New User",
+    "address": "Address",
+    "email": "Email",
+    "edit": "Save changed",
+    "save": "Save",
+    "position": "Position",
+    "role": "Role",
+    "avatar": "Avatar",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "phone-number": "Phone Number",
+    "gender": "Gender",
+    "password": "Password",
+    "upload": "Upload",
+    "action": "Action"
+  },
+  "homepage": {
+    "outstanding-doctor": "Outstanding Doctor of the Week",
+    "more-info": "More information",
+    "looking": "Looking",
+    "specialty-popular": "Popular specialties",
+    "clinic-popular": "Popular clinics",
+    "handbook": "Handbooks",
+    "view-all": "All posts"
+  },
+  "manage-schedule": {
+    "title": "Manage schedule medical examination",
+    "select-doctor": "Select doctor",
+    "select-day": "Select day",
+    "save": "Save"
+  },
+  "manage-patient": {
+    "title": "Manage patient's booking",
+    "save": "Save",
+    "select-day": "Select day",
+    "name": "Full name",
+    "gender": "Gender",
+    "time": "Time",
+    "actions": "Actions",
+    "confirm": "Confirm"
+  },
+  "patient": {
+    "detail-doctor": {
+      "schedule": "Schedule",
+      "notify": "No appointment.",
+      "choose": "Choose ",
+      "book-free": " and book (free).",
+      "booking": "booking",
+      "strengths": "strengths",
+      "location": "location",
+      "examination": "examination",
+      "equipment": "equipment",
+      "service": "service",
+      "treatment": "treatment",
+      "show": "View more...",
+      "hide": "Hide",
+      "introduce": "Introduction",
+      "select-specialty": "Select specialty"
+    },
+    "extra-info-doctor": {
+      "address": "Clinic address",
+      "price": "Examination price",
+      "payment": "Payments: ",
+      "detail": "View details",
+      "close": "Hide details"
+    },
+    "booking-modal": {
+      "title": "Booking Information",
+      "name": "Name",
+      "gender": "Gender",
+      "email": "Email",
+      "address": "Address",
+      "phoneNumer": "Phone number",
+      "birthday": "Birthday",
+      "reason": "Reason",
+      "save": "Save",
+      "cancel": "Cancel",
+      "price": "Price",
+      "price-booking": "Free booking"
+    }
+  },
+  "admin": {
+    "manage-doctor": {
+      "select-specialty": "Select specialty",
+      "select-doctor": "Select doctor",
+      "select-price": "Select price (USD)",
+      "select-clinic": "Select clinic",
+      "select-province": "Select province",
+      "select-payment": " Select payment",
+      "name-clinic": "Name clinic",
+      "address-clinic": "Clinc's address",
+      "note": "Note",
+      "detail": "Details",
+      "intro": "Introductory information",
+      "title": "Create doctor imformation",
+      "save": "Save",
+      "create": "Add",
+      "introduce_placeholder": "Introduce about doctor",
+      "select_specialty_placeholder": "Select specialty",
+      "select_doctor_placeholder": "Select doctor",
+      "select_price_placeholder": "Select price",
+      "select_payment_placeholder": "Select payment",
+      "find": "Find user",
+      "select_province_placeholder": "Select province",
+      "select_clinic_placeholder": "Select clinic",
+      "select_nameclinic_placeholder": "Enter name clinic",
+      "select_addressclinic_placeholder": "Enter address clinic",
+      "select_note_placeholder": "Note"
+    },
+    "manage-clinic": {
+      "title-header": "Add new clinic",
+      "title": "Manage Clinics",
+      "name": "Clinic name",
+      "address": "Clinic address",
+      "image": "Image",
+      "upload": "Upload",
+      "introduce": "Clinic introduction",
+      "save": "Save",
+      "add": "Add",
+      "logo": "Logo"
+    },
+    "manage-detail-clinic": {
+      "title": "Manage detail clinic",
+      "note": "Note",
+      "booking": "Detail booking",
+      "strengths": "Detail strengths",
+      "location": "Detail location",
+      "examination": "Detail examination process",
+      "equipment": "Detail equipments",
+      "service": "Detail services"
+    },
+    "manage-specialty": {
+      "title": "Manage Specialties",
+      "name": "Specialty Name",
+      "image": "Image",
+      "upload": "Upload",
+      "details": "Details"
+    },
+    "manage-detail-specialty": {
+      "title": "Quản lý chi tiết chuyên khoa",
+      "treament": "Detail examination and treament",
+      "trengths": "Detail strengths",
+      "services": "Detail services",
+      "examination": "Detail examination process"
+    },
+    "manage-handbook": {
+      "title": "Manage handbook",
+      "name": "Handbook name",
+      "save": "Save",
+      "related_post": "Related posts"
+    },
+    "manage-detail-handbook": {
+      "title": "Manage detail handbook",
+      "name": "Title handbook",
+      "image": "Image",
+      "content": "Content",
+      "placeholer": "Select handbook"
+    }
+  }
+}

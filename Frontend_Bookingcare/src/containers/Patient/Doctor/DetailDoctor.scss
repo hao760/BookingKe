@@ -1,0 +1,39 @@
+.doctor-detail-container {
+  .schedule-doctor {
+    padding-top: 10px;
+    min-height: 250px;
+    display: flex;
+    .left {
+      width: 50%;
+    }
+    .right {
+      width: 50%;
+    
+    }
+  }
+  .bg-container {
+    width: 100%;
+    background-color: #f9f9f9;
+    hr {
+      height: 3px;
+      color: #ddd;
+    }
+    &::before {
+      border-bottom: 3px solid #ddd;
+    }
+    .detail-info-doctor {
+      padding-top: 10px;
+      h3,
+      h2 {
+        font-size: 17px;
+        font-weight: 600;
+      }
+      img {
+        width: 100%;
+      }
+    }
+  }
+  .comment-doctor {
+    padding-top: 10px;
+  }
+}

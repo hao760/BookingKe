@@ -1,0 +1,24 @@
+.handbook-header-container {
+  .handbook-header {
+    padding: 10px 0;
+    background-color: #ddd;
+    .handbook-name {
+      font-weight: 600;
+      color: #5d5d5d;
+      padding: 10px 0;
+    }
+    .handbook-note {
+    }
+  }
+  .handbook-related {
+    background-color: #fff;
+    .list-handbook-related {
+      width: 1200px;
+      max-width: 100%;
+      margin: 0 auto;
+      .handbook-related_item {
+        width: 100%;
+      }
+    }
+  }
+}

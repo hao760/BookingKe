@@ -1,0 +1,32 @@
+.sub-menu {
+  background-color: #45c3d2 !important;
+  .home-header-content {
+    display: flex;
+    justify-content: space-between;
+    .left-container {
+      cursor: default;
+      .title-content {
+        padding-left: 15px;
+        font-weight: 600;
+        color: #fff;
+        font-size: 18px;
+        min-width: 500px;
+        cursor: default;
+      }
+      .fas {
+        cursor: pointer;
+      }
+    }
+    .right-container {
+      .lang-vi,
+      .lang-en {
+        &.active {
+          color: #fff !important;
+        }
+      }
+    }
+    .fas {
+      color: #fff !important;
+    }
+  }
+}

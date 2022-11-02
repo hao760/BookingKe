@@ -1,0 +1,38 @@
+
+  .list-handbook-related {
+    .title-related {
+      padding-top: 30px;
+    }
+    margin: 0;
+    padding: 0;
+    margin: 0 auto;
+    padding-bottom: 40px;
+    // display: flex;
+    .handbook-related_item {
+      cursor: pointer;
+      display: flex;
+      padding: 20px 0;
+      list-style-type: none;
+      width: 600px;
+      border-bottom: 1px solid #ddd;
+      white-space: break-spaces;
+      &:hover {
+        color: #45c3d2;
+      }
+      .item-image {
+        width: 250px;
+        height: 150px;
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        object-fit: cover;
+        word-wrap: inherit;
+      }
+      .item-title {
+        width: 350px;
+        margin-bottom: 0;
+        margin-left: 15px;
+        word-break: break-word;
+      }
+    }
+  }

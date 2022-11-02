@@ -1,0 +1,34 @@
+.preview-img-container {
+  display: flex;
+  label.lable-upload {
+    display: block;
+    height: fit-content;
+    width: fit-content;
+    padding: 8px;
+    border-radius: 3px;
+    background-color: #ddd;
+    cursor: pointer;
+  }
+  .preview-image {
+    width: 60%;
+    height: 80px;
+    margin-left: 10px;
+    cursor: pointer;
+    background: center center no-repeat;
+    background-size: contain;
+  }
+}
+textarea {
+  width: 100%;
+  height: 80px;
+  border-radius: 3px;
+  border-color: hsl(0, 0%, 70%);
+}
+.detail-header{
+    .name-select-handbook{
+        width: 50%;
+    }
+    .select-handbook{
+        width:350px;
+    }
+}

@@ -1,0 +1,28 @@
+.add-info {
+  display: flex;
+  justify-content: center;
+  .input-name {
+    width: 280px;
+    margin: 0 10px;
+    margin-bottom: 0;
+  }
+  align-items: center;
+  margin-bottom: 30px;
+}
+.row-name {
+  display: inline;
+  .fas {
+    padding: 0 8px;
+  }
+}
+.search-input {
+  width: 300px;
+  display: inline;
+  background-color: white;
+  outline-style: none;
+  border: none;
+  margin-left: 10px;
+  border-radius: 3px;
+  padding: 0 5px;
+  float: right;
+}

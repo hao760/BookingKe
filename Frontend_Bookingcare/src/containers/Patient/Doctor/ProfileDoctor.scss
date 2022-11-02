@@ -1,0 +1,23 @@
+.intro-doctor {
+  padding: 10px;
+  display: flex;
+  .left {
+    // width: 30%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 120px;
+    height: 120px;
+  }
+  .right {
+    padding-left: 15px;
+    width: calc(100% - 120px);
+    display: flex;
+    flex-direction: column;
+    .r-up {
+      font-weight: bold;
+      padding-bottom: 10px;
+    }
+    .r-down {
+    }
+  }
+}

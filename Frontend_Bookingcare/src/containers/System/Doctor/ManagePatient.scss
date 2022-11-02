@@ -1,0 +1,19 @@
+table {
+  width: 100%;
+  //   border: 1px solid #666;
+  td,
+  tr,
+  th {
+    border: 1px solid #ddd;
+    padding: 15px;
+  }
+  th {
+    text-align: center;
+  }
+}
+div._loading_overlay_wrapper {
+  position: unset;
+  ._loading_overlay_wrapper {
+    z-index: 10000;
+  }
+}

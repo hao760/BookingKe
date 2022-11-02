@@ -1,0 +1,78 @@
+.modal-content {
+  padding: 0 10px;
+  .price {
+    border: 1px solid #666;
+    width: 60px;
+    padding: 5px 20px;
+    min-width: fit-content;
+    i {
+      color: #666;
+      padding-right: 5px;
+    }
+    span {
+      display: block;
+      text-align: center;
+    }
+  }
+  .intro-doctor .left {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 80px;
+    height: 80px;
+  }
+}
+
+.option {
+  position: relative;
+  padding-left: 20px;
+  cursor: pointer;
+  input {
+    opacity: 0;
+    &:checked {
+      & ~ .checkmark {
+        &:after {
+          display: block;
+        }
+      }
+    }
+  }
+  &:hover {
+    .checkmark {
+      background: #f3f3f3;
+    }
+  }
+  .checkmark {
+    &:after {
+      content: "";
+      width: 10px;
+      height: 10px;
+      display: block;
+      background: linear-gradient(45deg, #afa6a9, #666);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      border-radius: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      transition: 300ms ease-in-out 0s;
+    }
+  }
+  input[type="radio"]:checked {
+    & ~ .checkmark {
+      background: #fff;
+      transition: 300ms ease-in-out 0s;
+      &:after {
+        transform: translate(-50%, -50%) scale(1);
+      }
+    }
+  }
+}
+.checkmark {
+  position: absolute;
+  top: 1px;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  border: 1px solid #bbb;
+  border-radius: 50%;
+}

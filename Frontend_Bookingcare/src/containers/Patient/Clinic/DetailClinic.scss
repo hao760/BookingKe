@@ -1,0 +1,134 @@
+.header-clinic-container {
+  .bg-clinic {
+    width: 100%;
+    height: 300px;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .wrap-clinic {
+    width: 100%;
+    height: fit-content;
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-start;
+    .lg-clinic {
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 180px;
+      height: 80px;
+      margin: 0 10px 0 20px;
+    }
+    .info-clinic {
+      width: 70%;
+      height: 90%;
+      .name-clinic {
+        font-size: 20px;
+        padding-bottom: 25px;
+      }
+      .address-clinic {
+        color: #333;
+        i {
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+}
+
+.detail-container {
+  .detail-specialy {
+    .note-bookingcare {
+      margin: 20px 0;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      border-color: #d6e9c6;
+      color: #3c763d;
+      background-color: #dff0d8;
+      border-radius: 5px;
+      .right {
+        padding-right: 20px;
+        color: #ffc107;
+        font-size: 21px;
+      }
+      .left {
+      }
+    }
+    .note-clinic {
+      padding: 20px;
+      // color: #3c763d;
+      background: #ffc;
+      margin-bottom: 20px;
+    }
+    img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    h3,
+    h4,
+    strong {
+      font-size: 15px;
+      font-weight: 600;
+    }
+    .detail-title {
+      text-transform: uppercase;
+      font-size: 20px !important;
+      font-weight: 600 !important;
+      color: #337ab7;
+      border-bottom: 1px solid #eee;
+    }
+  }
+}
+
+.menu-detail {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  align-items: center;
+  padding: 10px 0;
+  margin: 15px 0 2px;
+  li {
+    padding: 0 10px;
+    text-transform: uppercase;
+    cursor: pointer;
+    a {
+      text-decoration: none;
+      color: #333;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+.clinic-booking {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  background-color: #fff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  .select-specialty {
+    display: block;
+    width: 80%;
+    text-align: center;
+    background-color: #ffc107;
+    padding: 10px 0;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 15px;
+    color: #fff;
+    cursor: pointer;
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+}

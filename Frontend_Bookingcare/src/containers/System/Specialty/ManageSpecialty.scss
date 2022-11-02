@@ -1,0 +1,32 @@
+.specialty-container {
+  .row {
+    .specilalty-container {
+      display: flex;
+      .find-clinic {
+        margin-left: auto;
+        min-width: 270px;
+      }
+    }
+    float: none;
+    .preview-img-container {
+      display: flex;
+      label.lable-upload {
+        display: block;
+        height: fit-content;
+        width: fit-content;
+        padding: 8px;
+        border-radius: 3px;
+        background-color: #ddd;
+        cursor: pointer;
+      }
+      .preview-image {
+        width: 60%;
+        height: 80px;
+        margin-left: 10px;
+        cursor: pointer;
+        background: center center no-repeat;
+        background-size: contain;
+      }
+    }
+  }
+}

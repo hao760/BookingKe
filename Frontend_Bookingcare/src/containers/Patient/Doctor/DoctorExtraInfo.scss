@@ -1,0 +1,73 @@
+.doctor-extra-info-contrainer {
+  border-left: 1px solid #ddd;
+  padding-left: 15px;
+  .content-down,
+  .content-up {
+    .content-title {
+      text-transform: uppercase;
+      font-weight: bold;
+      color: #666;
+      font-size: 14px;
+      .price {
+        padding-right: 5px;
+      }
+    }
+  }
+  .content-up {
+    .content-name {
+      font-weight: bold;
+      font-size: 14px;
+      padding: 3px 0;
+    }
+    .content-address {
+      font-size: 14px;
+    }
+  }
+  .content-down {
+    .view-detail {
+      color: #45d3c2;
+      font-weight: normal;
+      text-transform: none;
+      cursor: pointer;
+      padding-left: 5px;
+    }
+    .content-price,
+    .content-info-payment {
+      padding: 5px 20px;
+      border: 1px solid #ddd;
+      min-height: 30px;
+    }
+    .content-price {
+      background: #eee;
+      .up {
+        width: 100%;
+        display: flex;
+        .name {
+          text-transform: uppercase;
+        }
+        .price {
+          margin-left: auto;
+        }
+      }
+      .down {
+        font-size: 12px;
+        color: #666;
+        font-weight: lighter;
+        text-transform: capitalize;
+      }
+    }
+    .content-info-payment {
+      background: #ddd;
+      height: 30px;
+      .type-payment {
+        text-transform: lowercase;
+      }
+    }
+    .content-close {
+      padding-top: 10px;
+      color: #45d3c2;
+      cursor: pointer;
+    }
+  }
+}
+
