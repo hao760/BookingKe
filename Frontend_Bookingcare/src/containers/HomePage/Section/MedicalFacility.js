@@ -8,7 +8,6 @@ import { getListClinicHomeService } from "../../../services/userService";
 import { withRouter } from "react-router-dom";
 import { toast } from "react-toastify";
 import * as actions from "../../../store/actions";
-
 class MedicalFacility extends Component {
   constructor(props) {
     super(props);
@@ -34,18 +33,15 @@ class MedicalFacility extends Component {
   };
   render() {
     const { listClinic } = this.state;
-    return (
-      <>
+    return ( <>
         <div className="section section-medical">
           <div className="section-container">
             <div className="section-header">
               <div className="title-section">
                 <FormattedMessage id="homepage.clinic-popular" />
               </div>
-              <div
-                className="btn-section"
-                onClick={() => this.handleClickViewMore()}
-              >
+              <div className="btn-section"
+                onClick={() => this.handleClickViewMore()}>
                 <FormattedMessage id="homepage.more-info" />
               </div>
             </div>
@@ -54,8 +50,7 @@ class MedicalFacility extends Component {
                 {listClinic &&
                   listClinic.length > 0 &&
                   listClinic.map((item, index) => {
-                    return (
-                      <div
+                    return ( <div
                         key={index}
                         className="section-customize"
                         onClick={() => this.handleViewDetailClinic(item)}

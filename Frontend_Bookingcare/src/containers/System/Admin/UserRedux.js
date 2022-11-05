@@ -226,7 +226,8 @@ class UserRedux extends Component {
         id: this.state.userEditId,
         ...data,
       });
-    }
+      
+    }//roleId: listRole && listRole.length > 0 ? listRole[0].keyMap : "",
     this.setState({
       email: "",
       password: "",
@@ -429,7 +430,7 @@ class UserRedux extends Component {
                       }
                     />
                     {errors.email && (
-                      <span className="text-danger">{errors.email}</span>
+                      <span className="text-danger">{errors.email}</span>//nek
                     )}
                   </div>
                   <div className="col-md-6 mt-md-0 mt-3">

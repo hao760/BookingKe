@@ -1,29 +1,21 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { push } from "connected-react-router";
-// import * as actions from "../store/actions";
 import * as actions from "../../store/actions";
 import "./login.scss";
-import { dateFilter } from "react-bootstrap-table2-filter";
+// import { dateFilter } from "react-bootstrap-table2-filter";
 import { handleLoginApiService } from "../../services/userService";
-
-// import { FormattedMessage } from "react-intl";
 
 class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      // admin
-      // email: "honghanh123@gmail.com",
-      // password: "123456",hongh
-      //doctor
       email: "daomanhhung1202@gmail.com",
       password: "123456",
       isShowPassword: false,
       errMessage: "",
     };
   }
-
   handleOnChangeUserName = (event) => {
     this.setState({
       email: event.target.value,
@@ -68,7 +60,6 @@ class Login extends Component {
       }
     }
   };
-
   // handleKeyDown(event) {
   //   if (event.keyCode === 13) {
   //     this.handleLogin();
