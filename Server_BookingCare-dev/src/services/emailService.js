@@ -97,3 +97,33 @@ exports.sendAttachment = async (dataSent) => {
     );
   }
 };
+
+exports.handleemailForgetPassService = async (reciveEmail,otp) => {
+  // let testAccount = await nodemailer.createTestAccount();
+
+  // create reusable transporter object using the default SMTP transport
+  let transporter = nodemailer.createTransport({
+    host: "smtp.gmail.com",
+    port: 587,
+    secure: false, // true for 465, false for other ports
+    auth: {
+      // user: "process.env.EMAIL_USER", // generated ethereal user
+      // pass: "process.env.EMAIL_PASSWORD", //process.env.EMAIL_PASSWORD, // generated ethereal password
+      user: process.env.EMAIL_USER, // generated ethereal user
+      pass: process.env.EMAIL_PASSWORD,
+      
+    },
+  });
+ 
+
+  // send mail with defined transport object
+  let info = await transporter.sendMail({
+    from: '"Fred Foo 👻" <foo@example.com>', // sender address
+    to: reciveEmail, // "bar@example.com, baz@example.com",
+    subject: "Hello ✔", // Subject line
+   
+    // html: "<b>pass la", randomNum,"</b>", // html body
+    html:`Mã OTP của bạn là : <b> ${otp}<b>`
+  });
+};
+

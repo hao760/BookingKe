@@ -211,3 +211,44 @@ exports.getAllCodeService = async (type) => {
     };
   }
 };
+
+exports.updatePass = async (email,password) => {
+  // const checkUser = await checkExisUser(user.id);
+  const newPassword= await hashUserPassword(password)
+  console.log("pass:",newPassword,email)
+  // return {
+  //   pass: pass,
+  //   email: email,
+  //       };
+
+  // if (!checkUser) return { errCode: 1, message: "User not found" };
+  return await db.User.update(
+    {
+      password:newPassword,
+    },
+    {
+      where: {
+        email: email,
+      },
+    },
+    {
+      raw: true,
+    }
+  )
+    .then(() => {
+      return {
+        errCode: 0,
+        message: "User updated",
+      };
+    })
+    .catch((ERR) => {
+      console.log(
+        "🚀 ~ file: userService.js ~ line 146 ~ exports.updateUser= ~ ERR",
+        ERR
+      );
+      return {
+        errCode: 1,
+        message: "update user failed",
+      };
+    });
+};

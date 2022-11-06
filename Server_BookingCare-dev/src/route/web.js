@@ -18,6 +18,8 @@ let initWebRoutes = (app) => {
   router.put("/api/edit-user", userController.handleEditUser);
   router.delete("/api/delete-user", userController.handleDeleteUser);
   router.get("/api/allcode", userController.getAllCode);
+  router.post("/api/forgetpass", userController.handleemailForgetPass);
+  router.post("/api/updatePass", userController.updatePass);
   // doctor
   router.get("/api/top-doctor-home", doctorController.getTopDoctorHome);
   router.get("/api/top-all-doctor", doctorController.getAllDoctor);
@@ -96,7 +98,10 @@ let initWebRoutes = (app) => {
   /* handbook */
   router.post("/api/create-handbook", handbookController.createHandbook);
 
-  router.get("/api/get-list-handbook-name", handbookController.getListNameHandbook);
+  router.get(
+    "/api/get-list-handbook-name",
+    handbookController.getListNameHandbook
+  );
   router.get("/api/get-handbook", handbookController.getHandBook);
   router.get("/api/get-list-handbook", handbookController.getListHandBook);
   router.put("/api/update-handbook", handbookController.updateHandbook);
@@ -127,11 +132,11 @@ let initWebRoutes = (app) => {
     "/api/delete-detail-handbook",
     detailHandbookController.deleteDetailHandbook
   );
-  // get reference handbook 
-    router.get(
-      "/api/get-related-handbook",
-      detailHandbookController.getRelatedHandbook
-    );
+  // get reference handbook
+  router.get(
+    "/api/get-related-handbook",
+    detailHandbookController.getRelatedHandbook
+  );
   return app.use("/", router);
 };
 

@@ -2,9 +2,11 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { push } from "connected-react-router";
 import * as actions from "../../store/actions";
+import { handleemailForgetPass, updatePass } from "../../services/userService";
 import "./login.scss";
 // import { dateFilter } from "react-bootstrap-table2-filter";
 import { handleLoginApiService } from "../../services/userService";
+import { toast } from "react-toastify";
 
 class Login extends Component {
   constructor(props) {
@@ -14,6 +16,11 @@ class Login extends Component {
       password: "123456",
       isShowPassword: false,
       errMessage: "",
+      isShowForgetPass: false,
+      emailForgetPass: "qhao74154@gmail.com",
+      codeOTP: "",
+      isShowinputUpdatepass: false,
+      newPass:""
     };
   }
   handleOnChangeUserName = (event) => {
@@ -25,6 +32,16 @@ class Login extends Component {
   handleOnChangePassword = (event) => {
     this.setState({
       password: event.target.value,
+    });
+  };
+  handleemailForgetPass = (event,id) => {
+    if(id=="emailForgetPass")
+    this.setState({
+      emailForgetPass: event.target.value,
+    });
+    if(id=="newPass")
+    this.setState({
+      newPass: event.target.value,
     });
   };
 
@@ -65,6 +82,31 @@ class Login extends Component {
   //     this.handleLogin();
   //   }
   // }
+  handleisShowForgetPass = (status) => {
+    this.setState({
+      isShowForgetPass: !status,
+    });
+  };
+
+  handleSendMail = (email) => {
+    let otp = Math.floor(Math.random() * (9999 - 1000)) + 1000;
+    this.setState({
+      codeOTP: otp,
+    });
+    handleemailForgetPass(email, otp);
+  };
+  handleCheckOTP = (otp) => {
+    if (this.state.codeOTP == otp) {
+      this.setState({
+        isShowinputUpdatepass: true,
+      });
+    }
+  };
+  
+  handleupdatePass = (pass) => {
+    updatePass(this.state.emailForgetPass,pass)
+    toast.success("Cập nhật password thành công");
+  };
   render() {
     return (
       <>
@@ -116,9 +158,53 @@ class Login extends Component {
                 </button>
               </div>
               <div className="col-12 ">
-                <span className="forgot-password">Forgot your password</span>
+                <button
+                  onClick={() => {
+                    this.handleisShowForgetPass(this.state.isShowForgetPass);
+                  }}
+                  className="forgot-password"
+                >
+                  Forgot your password
+                </button>
               </div>
-             {/*  <div className="col-12 mt-3 text-center">
+              {this.state.isShowForgetPass && (
+                <div>
+                  <input
+                    onChange={(event) => this.handleemailForgetPass(event,"emailForgetPass")}
+                    type="email"
+                    name=""
+                    value={this.state.emailForgetPass}
+                  />
+                  <button
+                    className="btn"
+                    onClick={() =>
+                      this.handleSendMail(this.state.emailForgetPass)
+                    }
+                  >
+                    Send mail
+                  </button>
+
+                  <input
+                    onChange={(event) =>
+                      this.handleCheckOTP(event.target.value)
+                    }
+                    type="text"
+                  />
+                  {this.state.isShowinputUpdatepass && (
+                    <div>
+                      <input type="text" value={this.state.newPass} onChange={(event) => this.handleemailForgetPass(event,"newPass")} />
+                      <button
+                        className="btn"
+                        onClick={() => this.handleupdatePass(this.state.newPass)}
+                      >
+                        Doi pass
+                      </button>
+                    </div>
+                  )}
+                </div>
+              )}
+
+              {/*  <div className="col-12 mt-3 text-center">
                 <span className="">Or login with</span>
               </div>
               <div className="col-12 social-login text-center">
