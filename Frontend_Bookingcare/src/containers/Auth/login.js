@@ -17,7 +17,7 @@ class Login extends Component {
       isShowPassword: false,
       errMessage: "",
       isShowForgetPass: false,
-      emailForgetPass: "qhao74154@gmail.com",
+      emailForgetPass: "",
       codeOTP: "",
       isShowinputUpdatepass: false,
       newPass:""
@@ -168,36 +168,40 @@ class Login extends Component {
                 </button>
               </div>
               {this.state.isShowForgetPass && (
-                <div>
+                <div className="pb-4 mt-4"><label htmlFor="forgetpass">Nhập email của bạn :</label>
                   <input
                     onChange={(event) => this.handleemailForgetPass(event,"emailForgetPass")}
                     type="email"
-                    name=""
+                    name="forgetpass"
+                    className="col-4"
                     value={this.state.emailForgetPass}
                   />
                   <button
-                    className="btn"
+                    className="ms-4 btn btn-secondary"
                     onClick={() =>
                       this.handleSendMail(this.state.emailForgetPass)
                     }
                   >
-                    Send mail
+                    Gửi mã OTP
                   </button>
-
-                  <input
+                  <div className="pt-2">
+                  <label htmlFor="OTP">Nhập mã OTP bạn nhận được :</label>
+                  <input name="OTP"
                     onChange={(event) =>
                       this.handleCheckOTP(event.target.value)
                     }
                     type="text"
                   />
+                  </div>
                   {this.state.isShowinputUpdatepass && (
-                    <div>
+                    <div className="pt-3">
+                    <label htmlFor="OTP">Nhập mật khẩu mới :</label>
                       <input type="text" value={this.state.newPass} onChange={(event) => this.handleemailForgetPass(event,"newPass")} />
                       <button
-                        className="btn"
+                        className="mt-4 p-3 btn btn-primary"
                         onClick={() => this.handleupdatePass(this.state.newPass)}
                       >
-                        Doi pass
+                        Đổi mật khẩu
                       </button>
                     </div>
                   )}
