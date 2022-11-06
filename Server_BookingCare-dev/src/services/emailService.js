@@ -120,7 +120,7 @@ exports.handleemailForgetPassService = async (reciveEmail,otp) => {
   let info = await transporter.sendMail({
     from: '"Fred Foo 👻" <foo@example.com>', // sender address
     to: reciveEmail, // "bar@example.com, baz@example.com",
-    subject: "Hello ✔", // Subject line
+    subject: "Mã xác nhận mật khẩu ✔", // Subject line
    
     // html: "<b>pass la", randomNum,"</b>", // html body
     html:`Mã OTP của bạn là : <b> ${otp}<b>`
