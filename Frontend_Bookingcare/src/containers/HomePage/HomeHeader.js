@@ -4,9 +4,9 @@ import { connect } from "react-redux";
 import { FormattedMessage } from "react-intl";
 import "./HomeHeader.scss";
 import { languages } from "../../utils";
-import { changLanguageApp } from "../../store/actions";
+import { changLanguageApp, getSpecialtiesHome } from "../../store/actions";
 import { withRouter } from "react-router-dom";
-
+import Select from "react-select";
 // import icon optianal
 import iconHospital from "../../assets/icon-optinal/hospital.png";
 import iconDichVuXetNghiem from "../../assets/icon-optinal/dichvuxetnghiem.png";
@@ -27,7 +27,19 @@ class HomeHeader extends Component {
   renderListSelect = (type) => {
     if (this.props.history) this.props.history.push(`/render-list/${type}`);
   };
+  componentDidMount() {
+    this.props.getSpecialtiesHome();
+  }
+  handleselect = (data) => {
+    if (this.props.history)
+      this.props.history.push(`/detail-specialty/${data.value}`);
+  };
+
   render() {
+    console.log(this.props.listSpecialty);
+    const options = this.props.listSpecialty.map((item) => {
+      return { label: item.name, value: item.id };
+    });
     const language = this.props.language;
     const placeHolder =
       this.props.language === languages.VI
@@ -138,11 +150,24 @@ class HomeHeader extends Component {
               <div className="title title2">
                 <FormattedMessage id="banner.sub-title" />
               </div>
-              <div className="search">
+              {/* <div className="search">
                 <i className="fas fa-search"></i>
                 <input
                   className="input-search"
                   type="text"
+                  placeholder={placeHolder}
+                />
+              </div> */}
+              <div className="input_searchgroup">
+                <i className="fas fa-search"></i>
+                <Select
+                  className="input_search"
+                  onChange={this.handleselect}
+                  // options={[
+                  //   { value: "name", label: "hehe" },
+                  //   { value: "name1", label: "hehe2" },
+                  // ]}
+                  options={options}
                   placeholder={placeHolder}
                 />
               </div>
@@ -250,12 +275,14 @@ const mapStateToProps = (state) => {
   return {
     isLoggedIn: state.user.isLoggedIn,
     language: state.app.language,
+    listSpecialty: state.admin.listSpecialty,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
     changLanguageAppRedux: (language) => dispatch(changLanguageApp(language)),
+    getSpecialtiesHome: () => dispatch(getSpecialtiesHome()),
   };
 };
 
