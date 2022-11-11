@@ -8,6 +8,7 @@ import detailClinicController from "../controllers/detailClinicController";
 import detailSpecialtyController from "../controllers/detailSpecialtyController";
 import handbookController from "../controllers/handbookController";
 import detailHandbookController from "../controllers/detailHandbookController";
+import packetController from "../controllers/packetController";
 
 let router = express.Router();
 
@@ -136,6 +137,13 @@ let initWebRoutes = (app) => {
   router.get(
     "/api/get-related-handbook",
     detailHandbookController.getRelatedHandbook
+  );
+
+
+  //packet
+  router.post(
+    "/api/createPacket",
+    packetController.createPacket
   );
   return app.use("/", router);
 };

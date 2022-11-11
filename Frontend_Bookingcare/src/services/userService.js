@@ -206,6 +206,10 @@ const updatePass = (email,password) => {
   return axios.post("/api/updatePass", { email,password});
 };
 
+const createPacketService = (data) => {
+  return axios.post("/api/createPacket", data);
+};
+
 export {
   updatePass,
   handleemailForgetPass,
@@ -258,4 +262,5 @@ export {
   postSemery,
   updateClinic,
   deleteClinicService,
+  createPacketService,
 };

@@ -41,7 +41,9 @@
       "manage-handbook": "Manage handbook",
       "manage-detail-clinic": "Manage detail clinic",
       "manage-detail-specialty": "Manage detail specialty",
-      "manage-detail-handbook": "Manage detail handbook"
+      "manage-detail-handbook": "Manage detail handbook",
+      "manage-packet-examination":"Manage packet examination",
+      "create-packet-examination":"Create packet examination"
     },
     "doctor": {
       "manage-schedule": "Manage doctor's shedule",
@@ -157,6 +159,7 @@
       "select_nameclinic_placeholder": "Enter name clinic",
       "select_addressclinic_placeholder": "Enter address clinic",
       "select_note_placeholder": "Note"
+      
     },
     "manage-clinic": {
       "title-header": "Add new clinic",

@@ -63,6 +63,20 @@ export const adminMenu = [
         link: "/system/manage-detail-handbook",
       },
     ],
+  },//dong thu 5
+  {
+    //quan ly cẩm nang
+    name: "menu.admin.manage-packet-examination",
+    menus: [
+      {
+        name: "menu.admin.create-packet-examination",
+        link: "/system/packet_examination",
+      },
+      {
+        name: "menu.admin.manage-detail-handbook",
+        link: "/system/manage-detail-handbook",
+      },
+    ],
   },
 ];
 

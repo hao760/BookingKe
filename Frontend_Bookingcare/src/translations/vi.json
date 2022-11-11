@@ -41,7 +41,9 @@
       "manage-handbook": "Quản lý cẩm nang",
       "manage-detail-clinic": "Quản lý chi tiết phòng khám",
       "manage-detail-specialty": "Quản lý chi tiết chuyên khoa",
-      "manage-detail-handbook": "Quản lý chi tiết cẩm nang"
+      "manage-detail-handbook": "Quản lý chi tiết cẩm nang",
+      "manage-packet-examination":"Quản lí gói khám ",
+      "create-packet-examination":"Tạo gói khám"
     },
     "doctor": {
       "manage-schedule": "Quản lý kế hoạch khám bệnh",
