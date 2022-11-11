@@ -19,3 +19,27 @@ exports.createPacketService = async (data) => {
     })
     .catch((err) => err);
 };
+
+
+exports.getAllPacketService = async () => {
+  return await db.Packet_examination.findAll(
+  //   {
+  //   where: { clinicId: null },
+  // }
+  )
+    .then((result) => {
+      console.log("get list specialty succeed");
+      return {
+        errCode: 0,
+        message: "get list specialty succeed",
+        data: result,
+      };
+    })
+    .catch((err) => {
+      console.log("err",err)
+      return {
+        errCode: 1,
+        message: "get list specialty failed",
+      };
+    });
+};

@@ -136,8 +136,10 @@ class Packet_examination extends Component {
     return (
       <div className="container">
         <div className=" my-3 row">
-          <h2 style={{ width: "100%", color: "blue", margin: "auto" }}
-          className="mb-5">
+          <h2
+            style={{ width: "100%", color: "blue", margin: "auto" }}
+            className="mb-5"
+          >
             Tạo gói khám bệnh
           </h2>
           <div className=" col-4 form-group">
@@ -208,8 +210,8 @@ class Packet_examination extends Component {
                   backgroundSize: `100% 100%`,
                   width: "300px",
                   height: "200px",
-                  objectFit: 'contain',
-                  backgroundRepeat:"no-repeat"
+                  objectFit: "contain",
+                  backgroundRepeat: "no-repeat",
                 }}
                 // onClick={() => this.openReview()}
               ></div>

@@ -1,0 +1,33 @@
+label.title {
+  font-size: 25px;
+}
+label.price {
+  font-size: 23px;
+  color: black;
+  padding: 20px;
+  margin-left: 120px;
+}
+.item {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  color: rgb(238, 238, 238);
+  cursor: pointer;
+}
+
+
+.container {
+  text-align: center;
+  .titlePage {
+    color: #0071ba;
+  }
+  .imgDanhMuc {
+    width: 80%;
+    border: gray 0.5px solid;
+    object-fit: cover;
+    cursor: pointer;
+    border-radius: 50%;
+  }
+  .nameDanhMuc {
+    font-size: 20px;
+    font-weight: bold;
+  }
+}

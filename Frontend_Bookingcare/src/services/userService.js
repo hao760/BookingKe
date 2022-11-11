@@ -210,7 +210,12 @@ const createPacketService = (data) => {
   return axios.post("/api/createPacket", data);
 };
 
+const getAllPacketService = () => {
+  return axios.get("/api/getAllPacket");
+};
+
 export {
+  getAllPacketService,
   updatePass,
   handleemailForgetPass,
   getRelatedHandbook,

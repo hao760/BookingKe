@@ -96,6 +96,7 @@ class DetailSpecialty extends Component {
     const { detailSpecialty, listDoctorSpecialty, isOpen } = this.state;
     return (
       <>
+      {/* ======================================= */}s
         <SubHeader
           isShowSupport={true}
           name={detailSpecialty?.name ? detailSpecialty.name : ""}

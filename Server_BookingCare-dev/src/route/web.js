@@ -139,12 +139,10 @@ let initWebRoutes = (app) => {
     detailHandbookController.getRelatedHandbook
   );
 
-
   //packet
-  router.post(
-    "/api/createPacket",
-    packetController.createPacket
-  );
+  router.post("/api/createPacket", packetController.createPacket);
+  router.get("/api/getAllPacket", packetController.getAllPacket);
+
   return app.use("/", router);
 };
 
