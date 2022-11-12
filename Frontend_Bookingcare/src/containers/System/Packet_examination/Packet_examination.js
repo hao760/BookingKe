@@ -25,6 +25,7 @@ class Packet_examination extends Component {
       title: "",
       previewImgUrl: "",
       image: "",
+      description: "",
     };
   }
 
@@ -79,10 +80,27 @@ class Packet_examination extends Component {
       title: this.state.title,
       image: this.state.image,
       type: this.state.selectedType.value,
+      description: this.state.description,
     };
     createPacketService(data);
     toast.success("Tạo gói khám thành công");
+    this.clearState();
   };
+
+  clearState = () => {
+  
+    this.setState({
+      price: "",
+      // selectedClinic: "",
+      // selectedType: "",
+      contentMarkdown:"",
+      title: "",
+      previewImgUrl: "",
+      // image: "",
+      description: "",
+    });
+  };
+
   handleOnChangeImage = async (event) => {
     const data = event.target.files;
     const file = data[0];
@@ -136,12 +154,15 @@ class Packet_examination extends Component {
     return (
       <div className="container">
         <div className=" my-3 row">
-          <h2
-            style={{ width: "100%", color: "blue", margin: "auto" }}
-            className="mb-5"
-          >
-            Tạo gói khám bệnh
-          </h2>
+          <div className="centerTitle">
+            <h2
+              style={{ width: "100%", color: "blue", margin: "auto" }}
+              className="mb-5"
+            >
+              Tạo gói khám bệnh
+            </h2>
+          </div>
+
           <div className=" col-4 form-group">
             <label htmlFor="clinicName">Chọn bệnh viện</label>
             <Select
@@ -153,13 +174,15 @@ class Packet_examination extends Component {
               placeholder="Chọn bệnh viện"
             />
           </div>
-          <div className="col-4 form-group">
+
+          <div className="col-4 form-group ">
             <label htmlFor="title">Tên gói</label>
             <input
               onChange={(event) => {
                 this.handleOnChangeInput(event, "title");
               }}
-              className="form-control "
+              className="form-control"
+              value={this.state.title}
               type="text"
               name="title"
             />
@@ -170,12 +193,13 @@ class Packet_examination extends Component {
               onChange={(event) => {
                 this.handleOnChangeInput(event, "price");
               }}
+              value={this.state.price}
               className="form-control "
               type="text"
               name="price"
             />
           </div>
-          <div className=" col-4 form-group">
+          <div className=" col-4 form-group bottomm">
             <label htmlFor="clinicName">Chọn loại</label>
             <Select
               name="clinicName"
@@ -187,16 +211,29 @@ class Packet_examination extends Component {
             />
           </div>
 
-          <div className="row col-5 form-group">
+          <div className="col-4 form-group bottomm">
+            <label htmlFor="description">Mô tả</label>
+            <textarea
+              name="description"
+              className="form-control"
+              value={this.state.description}
+              onChange={(event)=>{this.handleOnChangeInput(event,"description")}}
+              cols="30"
+              rows="10"
+            ></textarea>
+            {/* <input type="text"  name="description" /> */}
+          </div>
+          <div className="row col-4 form-group bottomm row">
             <input
               id="previewImgUrl"
               type="file"
               hidden
               onChange={(event) => this.handleOnChangeImage(event)}
+              className="col-3"
             />
-            <label>
+            <label className="col-3">
               {/* <FormattedMessage id="admin.manage-detail-handbook.image" /> */}
-              Ảnh gói khám
+              Ảnh gói khám :
             </label>
             <div className="col-7">
               <label className="lable-upload" htmlFor="previewImgUrl">
@@ -204,7 +241,7 @@ class Packet_examination extends Component {
                 <i className="fas fa-upload"></i>
               </label>
               <div
-                className="preview-image"
+                className="preview-image col-4"
                 style={{
                   backgroundImage: `url(${this.state.previewImgUrl})`,
                   backgroundSize: `100% 100%`,
@@ -223,6 +260,7 @@ class Packet_examination extends Component {
           style={{ height: "500px" }}
           renderHTML={(text) => mdParser.render(text)}
           onChange={this.handleEditorChange}
+          value={this.state.contentMarkdown}
         />
         <button
           className="btn btn-primary mt-2 p-2"

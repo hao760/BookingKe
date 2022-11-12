@@ -199,11 +199,11 @@ const getHandBookHome = () => {
 const getRelatedHandbook = (id) => {
   return axios.get(`/api/get-related-handbook?id=${id}`);
 };
-const handleemailForgetPass = (email,otp) => {
-  return axios.post("/api/forgetpass", { email,otp});
+const handleemailForgetPass = (email, otp) => {
+  return axios.post("/api/forgetpass", { email, otp });
 };
-const updatePass = (email,password) => {
-  return axios.post("/api/updatePass", { email,password});
+const updatePass = (email, password) => {
+  return axios.post("/api/updatePass", { email, password });
 };
 
 const createPacketService = (data) => {
@@ -213,8 +213,17 @@ const createPacketService = (data) => {
 const getAllPacketService = () => {
   return axios.get("/api/getAllPacket");
 };
+const getDetailPacketByID = (id) => {
+  return axios.get(`/api/getDetailPacket/${id}`);
+};
+
+const getPacketByDanhMucService = (id) => {
+  return axios.get(`/api/getPacketByDanhMuc?typepacket=${id}`);
+};
 
 export {
+  getPacketByDanhMucService,
+  getDetailPacketByID,
   getAllPacketService,
   updatePass,
   handleemailForgetPass,

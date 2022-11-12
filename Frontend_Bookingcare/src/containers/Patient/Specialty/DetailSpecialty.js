@@ -11,6 +11,7 @@ import Select from "react-select";
 import { withRouter } from "react-router-dom";
 import ProfileDoctor from "../Doctor/ProfileDoctor";
 
+
 class DetailSpecialty extends Component {
   constructor(props) {
     super(props);
@@ -96,7 +97,7 @@ class DetailSpecialty extends Component {
     const { detailSpecialty, listDoctorSpecialty, isOpen } = this.state;
     return (
       <>
-      {/* ======================================= */}s
+      {/* ======================================= */}
         <SubHeader
           isShowSupport={true}
           name={detailSpecialty?.name ? detailSpecialty.name : ""}

@@ -1,0 +1,36 @@
+.page {
+  position: relative;
+}
+.imgpacket {
+  width: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+  height: 200px;
+  margin-left: 30px;
+}
+.imgpacket{
+  box-sizing: unset;
+}
+
+.address{
+    right: 0; 
+    position: absolute;
+    font-size: 17px;
+    border: #808080 2px double;
+    padding: 15px;
+}
+.markdown{
+   margin-left: 150px;
+   margin-top: 150px;
+   position: absolute;
+}
+
+.description{
+    font-size: 17px;
+    margin-left: 120px;
+    margin-top: 40px;
+}
+.title{
+    font-size: 25px !important;
+}
+

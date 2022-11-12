@@ -9,7 +9,8 @@ exports.createPacketService = async (data) => {
     contentHTML: data.contentHTML,
     contentMarkdown: data.contentMarkdown,
     image:data.image,
-    typepacket:data.type
+    typepacket:data.type,
+    description:data.description,
   })
     .then(() => {
       return {
@@ -40,6 +41,57 @@ exports.getAllPacketService = async () => {
       return {
         errCode: 1,
         message: "get list specialty failed",
+      };
+    });
+};
+// getPacketByDanhMucService(typepacket
+exports.getPacketByDanhMucService = async (typepacket) => {
+  return await db.Packet_examination.findAll(
+    {
+    where: { typepacket: typepacket },
+  }
+  )
+    .then((result) => {
+      console.log("get list specialty succeed");
+      return {
+        errCode: 0,
+        message: "get list specialty succeed",
+        data: result,
+      };
+    })
+    .catch((err) => {
+      console.log("err",err)
+      return {
+        errCode: 1,
+        message: "get list specialty failed",
+      };
+    });
+};
+
+exports.getDetailPacketService = async (id) => {
+  if (!id)
+    return {
+      errCode: 1,
+      message: "Missing parameter",
+    };
+  return await db.Packet_examination.findOne({
+    where: { id: id },
+  })
+    .then((result) => {
+      return {
+        errCode: 0,
+        message: "get Packet_examination succeed",
+        data: result ? result : {},
+      };
+    })
+    .catch((err) => {
+      console.log(
+        "🚀 ~ file: Packet_examination.js ~ line 48 ~ exports.Packet_examination= ~ err",
+        err
+      );
+      return {
+        errCode: 1,
+        message: "get Packet_examination failed",
       };
     });
 };

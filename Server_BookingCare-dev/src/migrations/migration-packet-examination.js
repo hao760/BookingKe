@@ -27,6 +27,9 @@ module.exports = {
       clinicId: {
         type: Sequelize.STRING,
       },
+      description: {
+        type: Sequelize.TEXT("long"),
+      },
       image: {
         type: Sequelize.TEXT("long"),
       },

@@ -28,6 +28,7 @@ import RenderList from "./Patient/Common/RenderList";
 import DetailHandbook from "./Patient/Handbook/DetailHandbook";
 import ListPostHandbook from "./Patient/Handbook/ListPostHandbook";
 import Packet from "./Patient/Packet/Packet";
+import Detail_packet from "./Patient/Packet/Detail_packet";
 
 class App extends Component {
   handlePersistorState = () => {
@@ -60,6 +61,7 @@ class App extends Component {
                     path={"/render-list/packet"}
                     component={Packet}
                   />
+                  <Route path={"/detail-packet/:id"} exact component={Detail_packet} />
                   <Route path={path.HOME} exact component={Home} />
                   <Route
                     path={path.LOGIN}

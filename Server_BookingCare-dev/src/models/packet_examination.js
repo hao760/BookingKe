@@ -20,6 +20,7 @@ module.exports = (sequelize, DataTypes) => {
       clinicId: DataTypes.STRING,
       image: DataTypes.TEXT("long"),
       typepacket:DataTypes.STRING,
+      description:DataTypes.TEXT("long"),
     },
     {
       sequelize,

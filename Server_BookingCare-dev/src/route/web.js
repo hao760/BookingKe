@@ -142,6 +142,8 @@ let initWebRoutes = (app) => {
   //packet
   router.post("/api/createPacket", packetController.createPacket);
   router.get("/api/getAllPacket", packetController.getAllPacket);
+  router.get("/api/getDetailPacket/:id", packetController.getDetailPacket);
+  router.get(`/api/getPacketByDanhMuc`, packetController.getPacketByDanhMuc);
 
   return app.use("/", router);
 };
