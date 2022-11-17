@@ -1,7 +1,7 @@
 import { result } from "lodash";
 import userService from "../services/userService";
-
-import {handleemailForgetPassService} from "../services/emailService"
+import db from "../models/index";
+import { handleemailForgetPassService } from "../services/emailService";
 
 exports.handleLogin = async (req, res) => {
   const { email, password } = req.body;
@@ -19,8 +19,6 @@ exports.handleLogin = async (req, res) => {
     user: userData.user ? userData.user : {},
   });
 };
-
-
 
 exports.handleGetAllUers = async (req, res) => {
   const { id } = req.query;
@@ -105,35 +103,48 @@ exports.getAllCode = async (req, res) => {
   // });
 };
 
-
+const checkUserEmail = async (email) => {
+  const existUser = await db.User.findOne({ where: { email: email } }).catch(
+    (err) => {
+      throw new Error(err.message);
+    }
+  );
+  if (existUser) return true;
+  return false;
+};
 
 exports.handleemailForgetPass = async (req, res) => {
-  const { email,otp } = req.body;
-  if (!email ) {
-    return res.status(500).json({
+  const data = req.body;//{ email, otp } = req.body;
+  if (!data.email) {
+    return res.status(200).json({
       errCode: 1,
       message: "missing input parameters",
     });
   }
-  await handleemailForgetPassService(email,otp);
+  const check = await checkUserEmail(data.email);
+  if (!check) {
+    return res.status(200).json({
+      errCode: 2,
+      message: "ko ton tai",
+    });
+  }
+
+  await handleemailForgetPassService(data.email, data.otp);
   return res.status(200).json({
-    // errCode: userData.errCode,
-    // message: userData.message,
-    // user: userData.user ? userData.user : {},
+    errCode: 0,
+    message: "thanh cong",
   });
 };
 
-
-
 exports.updatePass = async (req, res) => {
-  const { email,password } = req.body;
-  if (!email ) {
+  const { email, password } = req.body;
+  if (!email) {
     return res.status(500).json({
       errCode: 1,
       message: "missing input parameters",
     });
   }
-  await userService.updatePass(email,password);
+  await userService.updatePass(email, password);
   return res.status(200).json({
     // errCode: userData.errCode,
     // message: userData.message,

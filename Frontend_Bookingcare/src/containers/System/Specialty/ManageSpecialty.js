@@ -326,6 +326,7 @@ class ManageSpecialty extends Component {
               </button>
             </div>
 
+         
             <TableManage
               listRender={this.state.listSpecialtyByClinicSearch}
               handleEdit={this.editSpecialty}

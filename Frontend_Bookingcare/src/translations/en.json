@@ -42,8 +42,8 @@
       "manage-detail-clinic": "Manage detail clinic",
       "manage-detail-specialty": "Manage detail specialty",
       "manage-detail-handbook": "Manage detail handbook",
-      "manage-packet-examination":"Manage packet examination",
-      "create-packet-examination":"Create packet examination"
+      "manage-packet-examination": "Manage packet examination",
+      "create-packet-examination": "Create packet examination"
     },
     "doctor": {
       "manage-schedule": "Manage doctor's shedule",
@@ -209,6 +209,16 @@
       "image": "Image",
       "content": "Content",
       "placeholer": "Select handbook"
+    },
+    "manage-packet": {
+      "packetName": "Packet name",
+      "title": "MANAGE PACKET EXAMINATION",
+      "selectClinic": "Clinic name",
+      "selectName": "Package name",
+      "selectPrice": "Price",
+      "Type": "Type",
+      "description": "Description",
+      "image": "Image"
     }
   }
 }

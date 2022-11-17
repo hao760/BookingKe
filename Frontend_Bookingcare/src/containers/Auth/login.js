@@ -34,15 +34,15 @@ class Login extends Component {
       password: event.target.value,
     });
   };
-  handleemailForgetPass = (event,id) => {
-    if(id=="emailForgetPass")
-    this.setState({
-      emailForgetPass: event.target.value,
-    });
-    if(id=="newPass")
-    this.setState({
-      newPass: event.target.value,
-    });
+  handleemailForgetPass = (event, id) => {
+    if (id == "emailForgetPass")
+      this.setState({
+        emailForgetPass: event.target.value,
+      });
+    if (id == "newPass")
+      this.setState({
+        newPass: event.target.value,
+      });
   };
 
   handleShowHidePassword = () => {
@@ -88,12 +88,15 @@ class Login extends Component {
     });
   };
 
-  handleSendMail = (email) => {
+  handleSendMail = async (email) => {
     let otp = Math.floor(Math.random() * (9999 - 1000)) + 1000;
     this.setState({
       codeOTP: otp,
     });
-    handleemailForgetPass(email, otp);
+    let res = await handleemailForgetPass(email, otp);
+    if (res.errCode == 2) toast.error("Email chưa được đăng kí");
+    if (res.errCode == 1) toast.error("Thiếu email");
+    if (res.errCode == 0) toast.success("Mã xác nhận đã được gửi");
   };
   handleCheckOTP = (otp) => {
     if (this.state.codeOTP == otp) {
@@ -102,7 +105,7 @@ class Login extends Component {
       });
     }
   };
-  
+
   handleupdatePass = (pass) => {
     updatePass(this.state.emailForgetPass,pass)
     toast.success("Cập nhật password thành công");
@@ -168,9 +171,12 @@ class Login extends Component {
                 </button>
               </div>
               {this.state.isShowForgetPass && (
-                <div className="pb-4 mt-4"><label htmlFor="forgetpass">Nhập email của bạn :</label>
+                <div className="pb-4 mt-4">
+                  <label htmlFor="forgetpass">Enter your email :</label>
                   <input
-                    onChange={(event) => this.handleemailForgetPass(event,"emailForgetPass")}
+                    onChange={(event) =>
+                      this.handleemailForgetPass(event, "emailForgetPass")
+                    }
                     type="email"
                     name="forgetpass"
                     className="col-4"
@@ -185,23 +191,32 @@ class Login extends Component {
                     Gửi mã OTP
                   </button>
                   <div className="pt-2">
-                  <label htmlFor="OTP">Nhập mã OTP bạn nhận được :</label>
-                  <input name="OTP"
-                    onChange={(event) =>
-                      this.handleCheckOTP(event.target.value)
-                    }
-                    type="text"
-                  />
+                    <label htmlFor="OTP">Enter the OTP you received :</label>
+                    <input
+                      name="OTP"
+                      onChange={(event) =>
+                        this.handleCheckOTP(event.target.value)
+                      }
+                      type="text"
+                    />
                   </div>
                   {this.state.isShowinputUpdatepass && (
                     <div className="pt-3">
-                    <label htmlFor="OTP">Nhập mật khẩu mới :</label>
-                      <input type="text" value={this.state.newPass} onChange={(event) => this.handleemailForgetPass(event,"newPass")} />
+                      <label htmlFor="OTP">Enter your new password :</label>
+                      <input
+                        type="text"
+                        value={this.state.newPass}
+                        onChange={(event) =>
+                          this.handleemailForgetPass(event, "newPass")
+                        }
+                      />
                       <button
                         className="mt-4 p-3 btn btn-primary"
-                        onClick={() => this.handleupdatePass(this.state.newPass)}
+                        onClick={() =>
+                          this.handleupdatePass(this.state.newPass)
+                        }
                       >
-                        Đổi mật khẩu
+                        Change Password
                       </button>
                     </div>
                   )}

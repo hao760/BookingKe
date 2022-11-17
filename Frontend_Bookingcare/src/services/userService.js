@@ -221,7 +221,17 @@ const getPacketByDanhMucService = (id) => {
   return axios.get(`/api/getPacketByDanhMuc?typepacket=${id}`);
 };
 
+const deletePacketService = (id) => {
+  return axios.delete(`/api/delete-packet?id=${id}`);
+};
+// updatePacketService
+const updatePacketService = (data) => {
+  return axios.post(`/api/update-packet`, data);
+};
+
 export {
+  updatePacketService,
+  deletePacketService,
   getPacketByDanhMucService,
   getDetailPacketByID,
   getAllPacketService,

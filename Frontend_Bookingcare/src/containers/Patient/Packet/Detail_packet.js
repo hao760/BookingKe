@@ -41,11 +41,11 @@ class Detail_packet extends Component {
                 <b>{detailPacket.title}</b>
               </div>
               <div className="description col-11 ">
-              {detailPacket.description}
+                {detailPacket.description}
               </div>
             </div>
           </div>
-          <div className="col-4 mt-5 address">
+          <div className="col-4 mt-5 address1">
             <b>ĐỊA CHỈ GÓI</b>
             <div>
               Phòng khám Đa khoa Olympus Gia Mỹ 33 Nguyễn Huy Lượng, Phường 14,
