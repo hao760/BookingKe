@@ -73,6 +73,15 @@ exports.getDetailPacketService = async (id) => {
     };
   return await db.Packet_examination.findOne({
     where: { id: id },
+    include: [
+      {
+        model: db.Clinic,
+        // as: "positionData",
+        attributes: ["address","name"],
+      },
+    ],
+    raw: true,
+    nest: true,
   })
     .then((result) => {
       return {

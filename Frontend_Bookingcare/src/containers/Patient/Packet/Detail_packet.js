@@ -6,6 +6,7 @@ import "./Detail-packet.scss";
 import { FormattedMessage } from "react-intl";
 import { getDetailPacketByID } from "../../../services/userService";
 import SubHeader from "../../HomePage/SubHeader";
+import HomeFooter from "../../HomePage/HomeFooter";
 
 class Detail_packet extends Component {
   constructor(props) {
@@ -46,12 +47,14 @@ class Detail_packet extends Component {
             </div>
           </div>
           <div className="col-4 mt-5 address1">
-            <b>ĐỊA CHỈ GÓI</b>
+            <b>ĐỊA CHỈ GÓI :</b>
+            <b>
+              {detailPacket.Clinic && <div>{detailPacket.Clinic.name}</div>}
+            </b>
             <div>
-              Phòng khám Đa khoa Olympus Gia Mỹ 33 Nguyễn Huy Lượng, Phường 14,
-              Quận Bình Thạnh, TP. Hồ Chí Minh GIÁ GÓI: 2.210.000đ2.410.000đ.
-            </div>{" "}
-            Xem chi tiết
+              {detailPacket.Clinic && <div>{detailPacket.Clinic.address}</div>}
+            </div>
+            <div>Giá : {detailPacket.price} VND</div>
           </div>
           <div className="col-5 markdown">
             <div>
@@ -64,9 +67,9 @@ class Detail_packet extends Component {
                 ></div>
               )}
             </div>
-            tổng quát
           </div>
         </div>
+        {/* <HomeFooter /> */}
       </>
     );
   }

@@ -4,6 +4,7 @@ import { withRouter } from "react-router";
 import { getAllPacketService,getPacketByDanhMucService } from "../../../services/userService";
 import SubHeader from "../../HomePage/SubHeader";
 import "./Packet.scss";
+import HomeFooter from "../../HomePage/HomeFooter";
 // import { FormattedMessage } from "react-intl";
 
 class Packet extends Component {
@@ -119,6 +120,7 @@ class Packet extends Component {
               );
             })}
         </div>
+        <HomeFooter />
       </>
     );
   }
