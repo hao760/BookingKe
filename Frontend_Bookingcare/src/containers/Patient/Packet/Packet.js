@@ -95,7 +95,7 @@ class Packet extends Component {
                   onClick={() => {
                     this.handleViewDetail(item.id);
                   }}
-                  className="col-3 item"
+                  className="col-3 item d-flex flex-column"
                   style={{
                     height: "auto",
                     transform: "scale(0.9, 0.9)",
@@ -112,9 +112,10 @@ class Packet extends Component {
                       backgroundRepeat: "no-repeat",
                     }}
                   />
-                  <label className="title">{item.title}</label>
-                  <label className="price">
-                    Giá : <b>{item.price}đ</b>
+                  <label className="title flex-grow-1">{item.title}</label>
+                  <label className="text-dark price d-flex justify-content-between py-2">
+                   <div>Giá :</div>
+                   <div>{item.price} VND</div>
                   </label>
                 </div>
               );

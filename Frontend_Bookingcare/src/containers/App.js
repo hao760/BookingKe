@@ -29,6 +29,7 @@ import DetailHandbook from "./Patient/Handbook/DetailHandbook";
 import ListPostHandbook from "./Patient/Handbook/ListPostHandbook";
 import Packet from "./Patient/Packet/Packet";
 import Detail_packet from "./Patient/Packet/Detail_packet";
+import { loadReCaptcha } from 'react-recaptcha-google'
 
 class App extends Component {
   handlePersistorState = () => {
@@ -47,6 +48,7 @@ class App extends Component {
 
   componentDidMount() {
     this.handlePersistorState();
+    loadReCaptcha();
   }
 
   render() {

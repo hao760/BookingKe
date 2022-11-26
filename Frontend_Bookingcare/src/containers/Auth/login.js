@@ -7,6 +7,7 @@ import "./login.scss";
 // import { dateFilter } from "react-bootstrap-table2-filter";
 import { handleLoginApiService } from "../../services/userService";
 import { toast } from "react-toastify";
+import ExampleComponent from "./ExampleComponent";
 
 class Login extends Component {
   constructor(props) {
@@ -152,6 +153,7 @@ class Login extends Component {
               <div className="col-12" style={{ color: "red" }}>
                 {this.state.errMessage}
               </div>
+              <ExampleComponent/>
               <div className="col-12">
                 <button
                   className="btn-login"
